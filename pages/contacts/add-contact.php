@@ -27,6 +27,25 @@
   </div>
 </div>
 
+<?php
+  $request = isset($_POST["menu"]) ? $_POST["menu"] : "home";
+  if(request == "insert-contact") {
+    $name = mysqli_real_escape_string($connection, $_POST["name"]);
+    $email = mysqli_real_escape_string($connection, $_POST["email"]);
+    $phone = mysqli_real_escape_string($connection, $_POST["phone"]);
+  
+    $sql = "INSERT INTO contacts (
+    name,email,phone) VALUES(
+    '{$name}', '{$email}', '{$phone}'
+    )
+    ";
+  
+    mysqli_query($connection, $sql) or die("Contact creation error" . mysqli_error($connection));
+  
+    echo "Contact successfully created";
+  }
+?>
+
 <script>
   (() => {
     const form = document.querySelector("#add-contact-form");
