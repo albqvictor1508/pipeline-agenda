@@ -1,0 +1,22 @@
+table {
+  text-align: center;
+}
+
+td {
+  border: 1px solid white;
+  padding-inline: 12px;
+  padding-block: 4px;
+}
+
+.form-container {
+  padding-inline: 18px;
+}
+
+.errors {
+  padding: 8px;
+  border-radius: 15px;
+  display: none;
+  background-color: rgb(230, 127, 127);
+  color: white;
+  border: 2px solid rgb(145, 9, 9);
+}
