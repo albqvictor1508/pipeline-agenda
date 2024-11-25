@@ -14,6 +14,7 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Favorite</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +35,7 @@
       </td>
       <td><?= $data["phone"] ?></td>
       <td><?= $data["favority_flag"] ?></td>
+      <td><a href="index.php?menu=edit-contact&id=<?= $data["id"] ?>">Editar</a></td>
     </tr>
     <?php } ?>
   </tbody>

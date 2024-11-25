@@ -35,6 +35,10 @@
               include("pages/contacts/insert-contact.php");
               break;
             }
+            case "edit-contact": {
+              include("pages/contacts/edit-contact.php");
+              break;
+            }
             case "events": {
               include("pages/events.php");
               break;
