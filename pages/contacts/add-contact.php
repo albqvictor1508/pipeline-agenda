@@ -3,7 +3,7 @@
     <div class="errors">
 
     </div>
-    <form action="index.php?menu=insert-contact" id="add-contact-form" method="post">
+    <form action="index.php?menu=insert-contact" id="add-contact-form" method="post" autocomplete="off">
       <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Name</label>
         <input type="text" class="form-control"  name="name" id="exampleInputName1" aria-describedby="emailHelp">
