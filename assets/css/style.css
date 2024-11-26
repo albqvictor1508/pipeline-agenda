@@ -27,6 +27,12 @@ td {
   border: 0;
 }
 
+.edit-photo-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
 .contacts-search {
     display: flex;
     justify-content: center;
@@ -56,40 +62,33 @@ td {
 
 .table__edit-button {
   background-color: transparent;
-  color: white;
+  color: green;
   padding: 6px 14px;
   border-radius: 10px;
   border: 1px solid green;
 
   a {
     text-decoration: none;
-    color: green;
-  }
-
-  a:hover {
-    color: white;
+    color: unset;
   }
 }
 
 .table__edit-button:hover {
   transition: 150ms ease-in-out;
   background-color: green;
+  color: white
 }
 
 .table__delete-button {
   background-color: transparent;
-  color: white;
+  color: red;
   padding: 6px 12px;
   border-radius: 10px;
   border: 1px solid red;
 
   a {
     text-decoration: none;
-    color: red;
-  }
-
-  a:hover {
-    color: white;
+    color: unset;
   }
   
 }

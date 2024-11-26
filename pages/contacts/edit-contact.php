@@ -37,17 +37,30 @@
   <div class="col-6">
     <?php
       if($data["photo"] == "" || !file_exists("assets/img/". $data['photo'])) {
-        $photoName = "SemFoto.jpg";
+        $photoName = "no-photo.jpeg";
+      } else {
+        $photoName = $data["photo"];
       }
-      $photoName = $data["photo"];
     ?>
     <div class="mb-3"><img src="assets/img/<?= $photoName ?>" width="500px" alt=""></div>
-
     <div class="mb-3">
-      <button>
+      <button class="edit-photo-btn">
       <i class='bx bxs-camera'></i> Edit photo
       </button>
     </div>
+
+    <form action="" id="form-upload-photo" class="mb-3" method="post" encytype="multipart/form-data">
+      <input type="hidden" name="id" value="<?= $id ?>" />
+      <label class="form-label" for="fileInput">Select the photo</label>
+
+      <div class="input-group">
+        <input class="form-control" type="file" name="file" id="fileInput" />
+        <input type="submit" class="btn btn-secondary" value="Send">
+      </div>
+    </form>
+      <div class="mb-3 alert alert-success">
+        
+      </div>
   </div>
 </div>
 
