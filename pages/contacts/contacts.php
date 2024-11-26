@@ -5,11 +5,10 @@
   <form action="index.php?menu=contacts" method="post">
     <input type="text" name="txt_search" />
     <input type="submit" value="Search" />
-    
   </form>
-  <button>
-    <a href="index.php?menu=add-contact">New contact.</a>
-  </button>
+  <a href="index.php?menu=add-contact" style="text-decoration: none;">
+    <button>New contact.</button>
+  </a>
 </div>
 <table>
   <thead>
@@ -25,34 +24,30 @@
   </thead>
   <tbody>
     <?php
-
       $quantityOfContactsPerPage = 10;
-      $page = (isset($_GET["page"]))? (int)$_GET["page"] : "";
-
+      $page = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
       $start = ($quantityOfContactsPerPage * $page) - $quantityOfContactsPerPage;
 
-    $txt_search = (isset($_POST["txt_search"]))? $_POST["txt_search"] : "";
-      $sql = "SELECT * FROM contacts WHERE id='{$txt_search}' or name LIKE '%{$txt_search}%'
-      ORDER BY name ASC
-      LIMIT $start, $quantityOfContactsPerPage;
+      $txt_search = isset($_POST["txt_search"]) ? mysqli_real_escape_string($connection, $_POST["txt_search"]) : "";
+      
+      $sql = "
+        SELECT * FROM contacts 
+        WHERE id='{$txt_search}' OR name LIKE '%{$txt_search}%'
+        ORDER BY name ASC
+        LIMIT $start, $quantityOfContactsPerPage
       ";
       $rs = mysqli_query($connection, $sql) or die("Error executing the query: " . mysqli_error($connection));
       
-      while($data = mysqli_fetch_assoc($rs)) {
-
+      while ($data = mysqli_fetch_assoc($rs)) {
     ?>
     <tr>
-      <td>
-        <?= $data["id"] ?>
-      </td>
-      <td><?= $data["name"] ?></td>
-      <td>
-      <?= $data["email"] ?>
-      </td>
-      <td><?= $data["phone"] ?></td>
-      <td><?= $data["favority_flag"] ?></td>
-      <td><a href="index.php?menu=edit-contact&id=<?= $data["id"] ?>">Editar</a></td>
-      <td><a href="index.php?menu=delete-contact&id=<?= $data["id"] ?>">Delete</a></td>
+      <td><?= htmlspecialchars($data["id"]) ?></td>
+      <td><?= htmlspecialchars($data["name"]) ?></td>
+      <td><?= htmlspecialchars($data["email"]) ?></td>
+      <td><?= htmlspecialchars($data["phone"]) ?></td>
+      <td><?= htmlspecialchars($data["favority_flag"]) ?></td>
+      <td><a href="index.php?menu=edit-contact&id=<?= htmlspecialchars($data["id"]) ?>">Edit</a></td>
+      <td><a href="index.php?menu=delete-contact&id=<?= htmlspecialchars($data["id"]) ?>">Delete</a></td>
     </tr>
     <?php } ?>
   </tbody>
@@ -60,18 +55,26 @@
 
 <br>
 <?php
-  $totalSQL = "SELECT id FROM 'contacts'";
+  $totalSQL = "SELECT id FROM contacts";
   $qr = mysqli_query($connection, $totalSQL) or die(mysqli_error($connection));
   $numTotal = mysqli_num_rows($qr);
-  $pageTotal = ceil(($numTotal / $quantityOfContactsPerPage))
+  $pageTotal = ceil($numTotal / $quantityOfContactsPerPage);
 
-  echo "total of contacts: $numTotal";
+  echo "Total of contacts: $numTotal<br>";
 
-  for($i = 1; $i <= $pageTotal; i++) {
-    if($i == $page) {
+  if ($page > 1) {
+    echo "<a href=\"?menu=contacts&page=" . ($page - 1) . "\"> << </a>";
+  }
+
+  for ($i = 1; $i <= $pageTotal; $i++) {
+    if ($i == $page) {
       echo $i;
     } else {
-      echo "<a href"\"page=$i\>$i</a>"
+      echo "<a class=\"pagination-link\"  href=\"?menu=contacts&page=$i\">$i</a>";
     }
+  }
+
+  if ($page < $pageTotal) {
+    echo "<a  class=\"pagination-link\" href=\"?menu=contacts&page=" . ($page + 1) . "\"> >> </a>";
   }
 ?>
