@@ -15,6 +15,7 @@
       <th>Phone</th>
       <th>Favorite</th>
       <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +37,7 @@
       <td><?= $data["phone"] ?></td>
       <td><?= $data["favority_flag"] ?></td>
       <td><a href="index.php?menu=edit-contact&id=<?= $data["id"] ?>">Editar</a></td>
+      <td><a href="index.php?menu=delete-contact&id=<?= $data["id"] ?>">Delete</a></td>
     </tr>
     <?php } ?>
   </tbody>

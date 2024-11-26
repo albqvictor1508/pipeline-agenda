@@ -1,6 +1,6 @@
 <header>
   <h3>
-    Update Contact
+    Insert Contact
   </h3>
 </header>
 <?php
@@ -8,14 +8,13 @@
   $email = mysqli_real_escape_string($connection, $_POST["email"]);
   $phone = mysqli_real_escape_string($connection, $_POST["phone"]);
 
-  $sql = "UPDATE contacts SET
-  name = {$name},
-  email = {$email},
-  phone = {$phone},
-  WHERE id = $id
+  $sql = "INSERT INTO contacts (
+  name,email,phone) VALUES(
+  '{$name}', '{$email}', '{$phone}'
+  )
   ";
 
   mysqli_query($connection, $sql) or die("Contact creation error" . mysqli_error($connection));
 
-  echo "Contact successfully updated";
+  echo "Contact successfully created";
 ?>

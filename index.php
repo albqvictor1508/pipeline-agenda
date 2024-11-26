@@ -39,6 +39,14 @@
               include("pages/contacts/edit-contact.php");
               break;
             }
+            case "update-contact": {
+              include("pages/contacts/update-contact.php");
+              break;
+            }
+            case "delete-contact": {
+              include("pages/contacts/delete-contact.php");
+              break;
+            }
             case "events": {
               include("pages/events.php");
               break;
