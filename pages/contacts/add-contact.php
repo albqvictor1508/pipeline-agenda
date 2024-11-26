@@ -1,4 +1,8 @@
 <div>
+  <header>
+    <h2>Add Contact</h2>
+  </header>
+
   <div class="form-container">
     <div class="errors">
 

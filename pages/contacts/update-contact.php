@@ -1,8 +1,3 @@
-<header>
-  <h3>
-    Update Contact
-  </h3>
-</header>
 <?php
   $id = $_GET["id"];
   $name = mysqli_real_escape_string($connection, $_POST["name"]);

@@ -18,6 +18,15 @@ td {
   border: 0;
 }
 
+.add-contact-btn {
+  margin-top: 10px;
+  padding: 6px 16px;
+  background-color: rgb(170, 166, 166);
+  border-radius: 5px;
+  color: white;
+  border: 0;
+}
+
 .contacts-search {
     display: flex;
     justify-content: center;
