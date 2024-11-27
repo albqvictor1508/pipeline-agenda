@@ -58,7 +58,7 @@
         <input type="submit" class="btn btn-secondary" value="Send">
       </div>
     </form>
-      <div class="mb-3 alert alert-success">
+      <div id="preloader" class="mb-3 alert alert-success">
         
       </div>
   </div>
