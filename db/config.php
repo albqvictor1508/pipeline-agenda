@@ -1,5 +1,5 @@
 <?php
-  //configuration constants for connect with BD
+  //configuration constants for connect with DB
 
   define("SERVER", "localhost");
   define("USER", "root");
