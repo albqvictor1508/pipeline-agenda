@@ -22,7 +22,7 @@ button {
 .pipeline-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 td {
@@ -55,17 +55,17 @@ td {
   justify-content: space-between;
 }
 
+.contacts.table {
+  display: flex;
+  align-items: center;
+
+}
+
 .contacts-search {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 24px;
-}
-
-.contacts-table {
-  display: flex;
-  align-items: center;
-  
 }
 
 .table__input-search {
