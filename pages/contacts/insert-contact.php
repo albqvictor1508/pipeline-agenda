@@ -1,7 +1,7 @@
-<header>
-  <h3>
+<header class="mt-4">
+  <h2>
     Insert Contact
-  </h3>
+  </h2>
 </header>
 <?php
   $name = mysqli_real_escape_string($connection, $_POST["name"]);

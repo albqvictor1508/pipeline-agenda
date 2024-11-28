@@ -1,5 +1,5 @@
-<header>
-  <h3>Delete Contact</h3>
+<header class="mt-4">
+  <h2>Delete Contact</h2>
 </header>
 
 <?php

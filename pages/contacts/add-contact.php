@@ -20,10 +20,6 @@
         <label for="exampleInputPhone1" class="form-label">Phone</label>
         <input type="tel" class="form-control" name="phone" id="exampleInputPhone1" aria-describedby="phoneHelp" required>
       </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" name="favority_flag" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Favorite</label>
-    </div>
     <button type="submit" class="btn btn-primary">Add Contact</button>
     </form>
   </div>
