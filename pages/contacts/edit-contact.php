@@ -13,7 +13,7 @@
       <div class="errors">
   
       </div>
-      <form action="index.php?menu=update-contact&id=<?= $id ?>" id="add-contact-form" method="post" autocomplete="off">
+      <form action="index.php?menu=update-contact&id=<?= $id ?>" id="add-contact-form" method="post" autocomplete="off" class="needs-validation">
         <div class="mb-3">
           <label for="exampleInputName1" class="form-label">Name</label>
           <input type="text" class="form-control" value="<?= $data["name"] ?>" name="name" id="exampleInputName1" aria-describedby="emailHelp">

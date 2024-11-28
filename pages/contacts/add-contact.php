@@ -7,10 +7,10 @@
     <div class="errors">
 
     </div>
-    <form action="index.php?menu=insert-contact" id="add-contact-form" method="post" autocomplete="off">
+    <form action="index.php?menu=insert-contact" id="add-contact-form" method="post" autocomplete="off" class="needs-validation">
       <div class="mb-3">
         <label for="exampleInputName1" class="form-label">Name</label>
-        <input type="text" class="form-control"  name="name" id="exampleInputName1" aria-describedby="emailHelp">
+        <input type="text" class="form-control"  name="name" id="exampleInputName1" aria-describedby="emailHelp" required>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">E-mail</label>
@@ -18,7 +18,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputPhone1" class="form-label">Phone</label>
-        <input type="tel" class="form-control" name="phone" id="exampleInputPhone1" aria-describedby="phoneHelp">
+        <input type="tel" class="form-control" name="phone" id="exampleInputPhone1" aria-describedby="phoneHelp" required>
       </div>
     <div class="mb-3 form-check">
       <input type="checkbox" class="form-check-input" name="favority_flag" id="exampleCheck1">
