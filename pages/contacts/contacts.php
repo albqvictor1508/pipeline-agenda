@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="../../assets/css/style.css">
 
-<header class="mt-4">
+<header class="mt-4 contacts-header">
   <h3>Contacts!</h3>
-</header>
-  
   <div class="contacts-table">
     <a href="index.php?menu=add-contact" style="text-decoration: none;">
       <button class="add-contact-btn">Add Contact</button>
     </a>
-    <div class="mt-5">
+</header>
+  
+    <div class="mt-5 mb-4">
       <form action="index.php?menu=contacts" method="post" class="contacts-search" autocomplete="off" >
         <input type="search" name="txt_search" class="table__input-search" />
         <button type="submit" class="table__search-button">Search</button>
@@ -16,7 +16,7 @@
       </form>
     </div>
     
-  <table class="table table-striped">
+  <table class="table table-striped contacts-table">
     <thead>
       <tr>
         <th>Id</th>

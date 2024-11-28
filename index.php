@@ -20,14 +20,6 @@
           $menu = (isset($_GET["menu"])) ? $_GET["menu"] : "home"; 
 
           switch($menu) {
-            case "tasks": {
-              include("pages/tasks.php");
-              break;
-            }
-            case "contacts": {
-              include("pages/contacts/contacts.php");
-              break;
-            }
             case "add-contact": {
               include("pages/contacts/add-contact.php");
               break;
@@ -48,13 +40,19 @@
               include("pages/contacts/delete-contact.php");
               break;
             }
-            case "events": {
-              include("pages/events.php");
+
+            case "login": {
+              include("pages/login.php");
+              break;
+            }
+
+            case "register": {
+              include("pages/register.php");
               break;
             }
 
             default: {
-              include("pages/home.php");
+              include("pages/contacts/contacts.php");
               break;
             }
           }
